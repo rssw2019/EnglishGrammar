@@ -10,6 +10,7 @@
     <title>Phrasal Verb Quiz
     </title>
     <script src="phrasal_verbs_questions.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="time">
@@ -56,7 +57,7 @@
         maxQuestions=questions.length-1;
         minQuestions=0;
         counter=Math.floor(Math.random()*(maxQuestions-minQuestions)+minQuestions);
-        //console.log(counter);
+        console.log(counter);
         
         //Total number of questions for the quiz
         let totalQuestions=3;
@@ -83,7 +84,7 @@
                     choiceArray=choiceArray.filter(item=>item!==choiceOrder[i]);            
                     max=max-1;
                 }
-                //console.log(choiceOrder);
+                console.log(choiceOrder);
 
                 //Write Answer choices
                 //use .replace(/\s/g, '') to scrape all the white spaces inside the choice statements
