@@ -27,6 +27,8 @@
     </div>
 
    <div id="quizcontainer">
+       <h2> Phrasal Verbs Quiz</h2>
+       <p> Welcome to the Phrasal Verb Quiz. You will be asked 10 quesitons in this quiz. You can take this quiz multiple times.</p>
        <p><button onclick="quizGenerator()"><p>Begin the Quiz</p></button></p>
        
 
@@ -60,7 +62,7 @@
         console.log(counter);
         
         //Total number of questions for the quiz
-        let totalQuestions=3;
+        let totalQuestions=6;
         
         
        //Quiz generator function
@@ -84,12 +86,12 @@
                     choiceArray=choiceArray.filter(item=>item!==choiceOrder[i]);            
                     max=max-1;
                 }
-                console.log(choiceOrder);
+                //console.log(choiceOrder);
 
                 //Write Answer choices
                 //use .replace(/\s/g, '') to scrape all the white spaces inside the choice statements
                 for (let j=0; j<questions[counter].choices.length;j++){
-                    document.getElementById("quizcontainer").innerHTML+=` <input type="radio" id=${j} name= ${j+1} value=${questions[counter].choices[choiceOrder[j]-1].trim().replace(/\s/g, '')}> ${questions[counter].choices[choiceOrder[j]-1].trim()} <br>`;
+                    document.getElementById("quizcontainer").innerHTML+=` <input type="radio" id=${j} name= "my choice" value=${questions[counter].choices[choiceOrder[j]-1].trim().replace(/\s/g, '')}> ${questions[counter].choices[choiceOrder[j]-1].trim()} <br>`;
                 }
 
                 document.getElementById("quizcontainer").innerHTML+="<p><button onclick=\"answerChecker()\"> Submit</button></p>";  
@@ -109,10 +111,11 @@
                     if (selectedValue==questions[counter].answer.replace(/\s/g, ''))
                         {
                             score=score+1;
-                            message=`<p style="font-color:green;">Great! Your answer was correct. ${questions[questionNumber].question} means ${questions[questionNumber].answer}</p>`;  
+                            console.log(questionNumber);
+                            message=`<p style="font-color:green;">Great! Your answer was correct. ${questions[counter].question} means ${questions[counter].answer}</p>`;  
                         }
                     else{
-                        message=`<p>Oops! Your answer was not correct. ${questions[questionNumber].question} means ${questions[questionNumber].answer}</p>`;  
+                        message=`<p>Oops! Your answer was not correct. ${questions[counter].question} means ${questions[counter].answer}</p>`;  
                     }
                 }
                 else{
