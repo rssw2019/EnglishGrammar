@@ -16,19 +16,23 @@
     <div id="time">
         <h2> </h2>
     </div>
+    <div id="header">
+        <h3>Phrasal Verbs Quiz</h3>
+    </div>
+    <div id="progress" style="text-align:left;">
+
+    </div>
     <div id="score" style="text-align:right;">
 
     </div>
 
     <div id="feedback">
 
-    
-
     </div>
 
    <div id="quizcontainer">
-       <h2> Phrasal Verbs Quiz</h2>
-       <p> Welcome to the Phrasal Verb Quiz. You will be asked 10 quesitons in this quiz. You can take this quiz multiple times.</p>
+       
+       <p> Welcome to the Phrasal Verbs quiz. You will be asked 10 quesitons in this quiz. You can take this quiz multiple times.</p>
        <p><button onclick="quizGenerator()"><p>Begin the Quiz</p></button></p>
        
 
@@ -68,6 +72,7 @@
        //Quiz generator function
        function quizGenerator(){
            document.getElementById("score").innerHTML=``;
+           document.getElementById("feedback").innerHTML=``;
            //create random choice order
            let choiceOrder=[1,2,3,4,5];
                 let max=questions[counter].choices.length-1;
@@ -81,8 +86,12 @@
            
             for (let i=0;i<totalQuestions;i++){
 
+                //write the progress
+                document.getElementById("progress").innerHTML=`<p> ${questionNumber}/ ${totalQuestions} </p>`;
+
+
                 //write the quesiton
-                document.getElementById("quizcontainer").innerHTML=`<p> ${questionNumber}) ${questions[counter].question} </p>`;
+                document.getElementById("quizcontainer").innerHTML=`<p> Q. Chose the meaning of the following phrasal verb: </p><p> &nbsp; &nbsp; &nbsp;${questions[counter].question} </p>`;
 
                 //Write Answer choices
                 //use .replace(/\s/g, '') to scrape all the white spaces inside the choice statements
