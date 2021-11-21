@@ -1,3 +1,10 @@
+let title="Phrasal Verb Quiz";
+
+let instructions = `<p> Welcome to the Phrasal Verbs quiz. You will be asked 10 questions in this quiz. You can take this quiz multiple times.</p> <p><button onclick="quizGenerator()"><p>Begin the Quiz</p></button></p>`;
+
+let question_title=`<p> Q. Chose the meaning of the following phrasal verb: </p><p> &nbsp; &nbsp; &nbsp;`
+
+
 let questions =													
    [
         {
